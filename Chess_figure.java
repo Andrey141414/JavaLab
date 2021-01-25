@@ -49,4 +49,11 @@ System.out.printf(" %s  Ценность - ",name);
 System.out.println(value);
 }
 
+
+public void Compare(Help a)
+{
+a.Help_name = name;
+}
+
+
 }

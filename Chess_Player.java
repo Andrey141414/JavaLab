@@ -30,34 +30,33 @@ public void playerRead(){
 
 	for (int i = 0; i < numbers; i++)
 	{
-		figures[i] = new Chess_figure();
 		System.out.printf("\t¬вод фигур\n‘игур осталось %d\n",numbers-i);
 		figures[i].Read();
 		
 	}
 }
 	//функци€ получени€ значений
-public void playerInit(String Pn, int numb, Chess_figure[] cf, int razryad){
-	PlayerName = Pn;
-	numbers = numb;
+public void playerInit(String PlayerName, int numbers, Chess_figure[] cf, int rank){
+	this.PlayerName = PlayerName;
+	this.numbers = numbers;
 	for (int i = 0; i < numbers; i++)
 	{
 		figures[i] = cf[i];
 	}
-	rank = razryad;
+	this.rank = rank;
 	color = false;
 }
 	//функци€ вывода
 public void playerDisplay(){
-	System.out.printf("»м€ %s \n",PlayerName);
-	System.out.printf("–азр€д %d \n",rank);
+System.out.printf("Name -  %s \n",PlayerName);
+	System.out.printf("Rank - %d \n",rank);
 	if (color)
-		System.out.printf("»грает белыми\n");
+		System.out.printf("Collor is white\n");
 	else
-		System.out.printf("»грает чЄрными\n");
+		System.out.printf("Collor is black\n");
 	
-	System.out.printf(" олличество фигур %d\n",numbers);
-	System.out.printf("‘игуры:\n");
+	System.out.printf("Numbers of figures is %d\n",numbers);
+	System.out.printf("Figures:\n");
 	for (int i = 0; i < numbers; i++)
 	{
 		
@@ -67,21 +66,7 @@ public void playerDisplay(){
 }
 
 public void playerCompare(Chess_Player player){
-	System.out.printf("%s VS %s\n",PlayerName,player.PlayerName);
-	 
-	 boolean winRank;
-	 if (player.rank < rank)
-	 {
-		 System.out.printf(" ѕќЅ≈ƒ»“≈Ћ№ %s ", player.PlayerName);
-	 }
-	 if (player.rank > rank)
-	 {
-		 System.out.printf(" ѕќЅ≈ƒ»“≈Ћ№ %s ", PlayerName);
-	 }
-	 if (player.rank == rank)
-	 {
-		  System.out.printf(" Ќ»„№я \n");
-	 }
+
 }
 	
 

@@ -7,12 +7,15 @@ public void clear()
 	}
 }
 
+
+
 	public static void main(String[] args) {
 	Program screen = new Program();
-	String[] NAMES = {"Пешка","Конь", "Слон", "Ладья", "Ферзь"};
-	Chess_figure MAS[] = new Chess_figure[10];
-	
-	for (int i = 0; i < 10; i++)
+	String[] NAMES = {"Pawn","Knight", "Bishop", "Rook", "Queen"};
+	int N = 10;
+		Chess_figure[] MAS = new Chess_figure[N];
+
+	for(int i=0;i<N;i++)
 	{
 		MAS[i] = new Chess_figure();
 		switch (i%5)
@@ -23,21 +26,51 @@ public void clear()
 		case 3: {MAS[i].Init(5, NAMES[i % 5]); }; break;
 		case 4: {MAS[i].Init(9, NAMES[i % 5]); }; break;
 		}
-		
+	
+	}
+	
+	for(int i= 0;i<N;i++)
+	{
+	MAS[i].Display();
 	}
 
-	Chess_Player Andrey = new Chess_Player();
-	Chess_Player Magnus = new Chess_Player();
-	Magnus.playerInit("Магнус",10, MAS, 1);
-	Andrey.playerRead();
 
-	Andrey.playerDisplay();
+
+	for(int i=0;i < N;i++)
+	{
+	Help a = new Help();
+	MAS[i].Compare(a);
+
+	for(int j = i+1;j < N+1;j++)
+	{	
+	Help b = new Help();
+	MAS[j].Compare(b);
+	if(a.Help_name.equalsIgnoreCase(b.Help_name))
+		{
+		for(int z = j;z < N-1;z++)
+			{
+			MAS[z]=MAS[z+1];
+			}
+		N-=1;
+		}
+	}
+	} 
+
+
+
 	screen.clear();
-	Magnus.playerDisplay();
-	screen.clear();
-	
-	Andrey.playerCompare(Magnus);
-	
+	for(int i= 0;i<N;i++)
+	{
+	MAS[i].Display();
+	}
+
+
+
+screen.clear();
+Chess_Player Magnus = new Chess_Player();
+	Magnus.playerInit("Magnus",N, MAS, 1);
+
+Magnus.playerDisplay();
 
 }
 }
