@@ -1,8 +1,9 @@
 import java.util.Scanner;
 public class Chess_figure{
+private String[] NAMES = {"Iaoea","Eiiu", "Neii", "Eaauy", "Oa?cu"};
 
-private String name;
 
+public String name;
 public int value;
 public boolean pawn;
 
@@ -19,15 +20,11 @@ this.name = name;
 value = 3;
 }
 
-public Chess_figure()
-{
-this.name = "King";
-this.value = 10;
-}
+
 
 public void Display(){
 
-System.out.printf(" %s  Value - ",name);
+System.out.printf(" %s  Oaiiinou - ",name);
 System.out.println(value);
 }
 
