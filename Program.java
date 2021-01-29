@@ -2,32 +2,37 @@ public class Program {
 
 	public static void main(String[] args) {
 	
-	int N = 2;
-	int M = 8;
-	Chess_figure[][] MAS = new Chess_figure[N][M];
-	for (int i = 0; i < M; i++)
-	{
-		Chess_figure a = new Chess_figure("Pawn");
-		MAS[1][i] = a;
-	}
-	
-	MAS[0][0] = new Chess_figure("Ladya");
-	MAS[0][1] = new Chess_figure("Kon");
-	MAS[0][2] = new Chess_figure("Slon");
-	MAS[0][3] = new Chess_figure("Queen");
-	MAS[0][4] = new Chess_figure("King");
-	MAS[0][5] = new Chess_figure("Slon");
-	MAS[0][6] = new Chess_figure("Kon");
-	MAS[0][7] = new Chess_figure("Ladya");
+Chess_Player player = new Chess_Player();
+Man man = new Man(100);
 
-	for(int i=0;i<N;i++)
-	{
-		for(int j=0;j<M;j++)
-		{
-		System.out.printf("%s\t",MAS[i][j].name);
-		}
-	System.out.printf("\n");
-	}
+int a = 1 ;
+//subclassfunc
+man.test(a);
+//Superclass func
+man.test();
+
+System.out.printf("%s",player.toString());
+
+
+
+	Chess_Player cp = new Chess_Player();
+	Football_Player fp =  new Football_Player();
+	BOX_Player bp= new BOX_Player();
+	cp.training();
+	fp.training();
+	bp.training();
+
+
+
+
+System.out.printf("\n\n realisation of interfece Done, method (Win) n\");
+
+cp.win();
+fp.win();
+bp.win();
+
+
+
 
 }
 }
